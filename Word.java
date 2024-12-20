@@ -20,20 +20,20 @@ public class Word {
     }
 
     public boolean isGuessed() {
-        for (boolean b : guessed) {
-            if (!b) return false;
+        for (boolean isGuessed : guessed) {
+            if (!isGuessed) return false;
         }
         return true;
     }
 
     @Override
     public String toString() {
-        StringBuilder sth = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
-            sth.append(guessed[i] ? word.charAt(i) : "_");
-            sth.append(" ");
+            stringBuilder.append(guessed[i] ? word.charAt(i) : "_");
+            stringBuilder.append(" ");
         }
-        return sth.toString();
+        return stringBuilder.toString();
     }
 
     public String getWord() {
@@ -41,10 +41,6 @@ public class Word {
     }
 
     public String getMaskedWord() {
-        StringBuilder sth = new StringBuilder();
-        for (int i = 0; i < word.length(); i++) {
-            sth.append("*");
-        }
-        return sth.toString();
+        return "*".repeat(word.length());
     }
 }

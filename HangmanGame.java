@@ -4,36 +4,13 @@ import java.util.Random;
 public class HangmanGame {
 
 
-    public static void main(String[] args) {
-        ArrayList<String> words = new ArrayList<>();
-        words.add("apple");
-        words.add("pear");
-        words.add("pineapple");
-        words.add("banana");
-        words.add("orange");
-        words.add("cucumber");
-        words.add("tomato");
-        words.add("lemon");
-        words.add("pepper");
-        words.add("garlic");
-        words.add("onion");
-        words.add("broccoli");
-        words.add("soup");
-        words.add("potato");
-        words.add("cat");
-        words.add("dog");
-        words.add("mule");
-        words.add("horse");
-        words.add("pig");
-        words.add("rabbit");
-        words.add("alligator");
-        words.add("ant");
-        words.add("monkey");
-        words.add("bee");
-        words.add("butterfly");
-        words.add("camel");
-        words.add("chicken");
-        words.add("cow");
+    public static void HangmanGame(String[] args) {
+
+            List<String> words = List.of("apple", "pear", "pineapple", "banana", "orange", "cucumber", "tomato", "lemon",
+                    "pepper", "garlic", "onion", "broccoli", "soup", "potato", "cat", "dog", "mule", "horse", "pig", "rabbit",
+                    "alligator", "ant", "monkey", "bee", "butterfly", "camel", "chicken", "cow");
+
+
         Random random = new Random();
         int randomIndex = random.nextInt(words.size());
         String randomWord = words.get(randomIndex);
@@ -42,6 +19,8 @@ public class HangmanGame {
         Player player = new Player();
 
         System.out.println("The hidden word is " + word.getMaskedWord());
+
+        final Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println(word);
@@ -58,7 +37,7 @@ public class HangmanGame {
             System.out.println("If you want to give up - press 'Ctrl + D'");
             System.out.println("Enter the letter: ");
 
-            Scanner scanner = new Scanner(System.in);
+
             String input = scanner.nextLine();
             if (input.length() != 1) {
                 System.out.println("Hey, enter only one letter:(.");
